@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+{{ partial "head.html" . }}
+
+<body>
+<div id="layout">
+
+  {{ partial "sidemenu.html" . }}
+
+  <div id="main">
+	<script src="/js/jquery.js" type="text/javascript"></script>
+	
+	
+	<!--Bouton haut de page -->
+	
+	<script type="text/javascript">
+  		//<![CDATA[
+		$(window).scroll(function() {
+  		if($(window).scrollTop() == 0){
+   	 	$('#scrollToTop').fadeOut("fast");
+  		} else {
+    		if($('#scrollToTop').length == 0){
+     	 	$('body').append('<div id="scrollToTop">'+
+        	'<a href="#"><img src="/images/top.png" alt="" /></a>'+
+        	'</div>');
+   	 	}
+   	 	$('#scrollToTop').fadeIn("fast");
+  		}
+		});
+		$('#scrollToTop a').live('click', function(event){
+  		event.preventDefault();
+  		$('html,body').animate({scrollTop: 0}, 'slow');
+		});
+  		//]]>
+	</script>
+
+
+
+	<style type="text/css">
+
+	#scrollToTop a{
+    		display: block;
+    		font-size: 1em;	 
+    		text-decoration: none;    	
+    		position: fixed;
+    		right: 10px;
+    		bottom: 10px;    	
+    	}
+	#scrollToTop a:hover{
+		text-decoration:none;	
+    	}
+
+	#scrollToTop img{
+		padding:0;	
+    	}
+	#scrollToTop a img{
+		border: none;	
+    	}
+
+	</style>
+	<!--Fin du bouton haut de page -->
